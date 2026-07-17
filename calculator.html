@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Empire Traders - Smart Calculator</title>
+<link rel="stylesheet" href="calculator.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=EvczHBq0Cq_KGV4BYheDOt7Vf-4N0wOxoU_rzXd8YVn_ZiPtkHfim0T0WnUrfLQw-bP1RB3S2R5A02dBsjdD3a3tIfmP9M1O-mL6v9vYkTYQoswhy4yxINheyNeTsERkp_BoccKnRfNpumQuUG2eavQsABF2hmjqmMOAQN21Xr1V9Yw-w6cWko7S8nNEA0DphMxNCDxTY3T7GZ4pFafsVB_uWCz-m-nMs7aFkH7O9xS5E9mPi34Umid90qnm91knTzsTLFZA0e_RsVocEZpiqYcdjokQxWOZQ-0Ju6N5gYRMJemoIS7oGrZN1WSCGALF" charset="UTF-8"></script></head>
+<body>
+<div id="loginScreen">
+
+<h1>EMPIRE TRADERS</h1>
+
+<p class="warning">
+
+This calculator has been developed exclusively on customer demand and is not intended for public use.
+
+<br><br>
+
+For authorized access, please contact <b>Ma Arshad</b> to obtain the password.
+
+</p>
+
+<input
+type="password"
+id="password"
+placeholder="Enter Password">
+
+<button onclick="checkPassword()">
+
+Login
+
+</button>
+
+<p id="loginError"></p>
+
+</div>
+
+<div id="calculatorApp" style="display:none;">
+
+<header>
+<h1>Empire Traders Smart Calculator</h1>
+<p>Professional Measurement & Estimation Tool</p>
+</header>
+
+<main>
+
+<section>
+<h2>Customer Details</h2>
+<input id="customerName" type="text" placeholder="Customer Name">
+
+<input id="customerPhone" type="tel" placeholder="Phone Number">
+
+<input id="projectName" type="text" placeholder="Project Name">
+
+<input id="projectDate" type="date">
+<label>Project Address</label>
+
+<textarea
+id="projectAddress"
+rows="3"
+placeholder="Enter Project Address"></textarea>
+<label>Dealer Name</label>
+
+<input
+id="dealerName"
+type="text"
+value="Empire Traders">
+
+<label>Dealer Phone</label>
+
+<input
+id="dealerPhone"
+type="text"
+placeholder="Dealer Phone Number">
+</section>
+
+<section>
+<h2>Rooms</h2>
+<button id="addRoomBtn">+ Add Room</button>
+<div id="roomsContainer">
+<!-- Rooms will be added by calculator.js -->
+</div>
+</section>
+
+<section>
+
+<p>Total Wall Area : <span id="wallArea">0</span> sqft</p>
+<p>Total Ceiling Area : <span id="ceilingArea">0</span> sqft</p>
+<p><strong>Net Area : <span id="netArea">0</span> sqft</strong></p>
+<section>
+
+<section>
+<h2>Cost Estimation</h2>
+
+<div id="wallCostList"></div>
+
+<hr>
+
+<div id="ceilingCostList"></div>
+
+<hr>
+
+<h3>Total Material Cost :
+₹ <span id="materialTotal">0</span></h3>
+
+<br>
+
+<label>Other Charges</label>
+
+<input
+type="number"
+id="otherCharges"
+value="0"
+oninput="calculateTotals()">
+
+<label>Discount</label>
+
+<input
+type="number"
+id="discount"
+value="0"
+oninput="calculateTotals()">
+
+<hr>
+
+<h2>
+
+Grand Total :
+₹ <span id="grandTotal">0</span>
+
+</h2>
+
+</section>
+
+<section>
+<h2>Notes</h2>
+<textarea rows="6" placeholder="Project Notes"></textarea>
+</section>
+
+<section>
+<h2>Actions</h2>
+
+
+<button id="resetBtn">Reset</button>
+<button id="pdfBtn">Download PDF</button>
+<button id="agreementBtn">
+📄 Generate Agreement
+</button>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="calculator.js"></script>
+
+</body>
+</html>
