@@ -513,12 +513,6 @@ ceilingTotal += total;
   document.getElementById("ceilingArea").textContent=ceilingTotal.toFixed(2);
   const net=wallTotal+ceilingTotal;
   document.getElementById("netArea").textContent=net.toFixed(2);
-  let panel=parseFloat(document.getElementById("panelSize").value);
-  if(isNaN(panel)) panel=16;
-  const panelCount=Math.ceil(net/panel);
-  document.getElementById("panelCount").textContent=panelCount;
-  const waste=parseFloat(document.getElementById("wastage").value)||0;
-  document.getElementById("finalPanels").textContent=Math.ceil(panelCount*(1+waste/100));
   //================ COST ESTIMATION ================
 
 let wallHTML = "";
